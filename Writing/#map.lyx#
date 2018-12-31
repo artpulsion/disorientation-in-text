@@ -1,0 +1,383 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part*
+Étude de la désorientation dans un corpus de texte
+\end_layout
+
+\begin_layout Subsection*
+Introduction
+\end_layout
+
+\begin_layout Standard
+Dans un monde où la désorientation est un enjeu tacite mais d’envergure,
+ l’étude des causes de son émergence paraît nécessaire.
+ La sensation de désorientation se loge à divers endroits et sous diverses
+ formes.
+ Tous les modules perceptifs qu’ils soient auditif, visuels ou tactiles
+ sont autant de portes d’entrées vers le maintien ou l’effrondrement d’une
+ phénoménologie cohérente, qui elle dialogue au quotidien par d’étroits
+ liens avec notre psycho-motricité.
+ 
+\end_layout
+
+\begin_layout Itemize
+Préférez-vous être dans une rue bruyante ou calme ? 
+\end_layout
+
+\begin_layout Itemize
+Préférez-vous marcher d’un endroit à l’autre dans une ville calme ou bruyante
+ ? 
+\end_layout
+
+\begin_layout Itemize
+Pourquoi préférez-vous les rues calmes ? 
+\end_layout
+
+\begin_layout Itemize
+Sont-elles moins génante, perturbantes, contraignantes, débousollantes ?
+\end_layout
+
+\begin_layout Standard
+Dans l’exemple précedent nous avons fait appelle à notre mémoire pour accéder
+ aux représentations auditives que nous avons d’une telle situation; mais
+ à vrai dire, le dernier passage semblait également difficile à lire non
+ ? Peut-être avez-vous plissez vos yeux ou basculer votre buste pour y voir
+ plus clair.
+ Peut-être ne vous aventureriez-vous jamais à lire un roman à la police
+ aussi diforme que dans ce dernier passage.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Ceci n’est qu’une des multiples situations où nous éprouvons une gêne induite
+ de l’environnement avec lequel nous intéragisons.
+ Que ces gênes soit représentationelles ou physiques, ou l’un puis l’autre,
+ ces élements sont autant d’attractions quotidiennes pour nos sens mais
+ également de facteurs pouvant expliquer l’émergence de la sensation de
+ désorientation.
+ La gêne physique et cognitive éprouver dans une rue bruyante ou à la lecture
+ d’un passage visuellement incohérent nous gêne physiquement et déformes
+ nos représentations mentales.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Alors, quand est-il de l’émergence de la sensation de désorientation dû
+ à d'autres facteurs communs et recurrent ? Ces réseaux de rues complexes,
+ ces architectures entropiques, ces couleurs, ces contrastes, ces messages
+ numériques que nous recevons et lisons sans cesse – pour ce faire une idée
+ de quelque chose, chercher une information ou donner son avis – ?
+\end_layout
+
+\begin_layout Subsection*
+Développement
+\end_layout
+
+\begin_layout Standard
+À notre échelle nous allons proposer dans ce rapport de synthèse une méthode
+ algorithmique permettant de déterminer suite à une phase d’apprentissage
+ si un texte véhicule le récit d'une personne sujet à la sensation de désorienta
+tion.
+ Nos matériaux d'analyses seront ici des commentaires fictifs choisit sur
+ une plateforme numérique quelconque où les individus se sont amusés à parsemer
+ au quotidien leurs avis sur les environnements qui les entourent.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+L’idée repose sur le fait d’entrainer une structure de décision capable
+ d’apprendre de ses prior.
+ Ces prior ne seront ni plus ni moins que ce que nous déciderons de lui
+ faire apprendre.
+ En bref, nous utiliserons ici un arbre de décision que nous allons entrainer
+ de la façon suivante: nous présenterons à l’arbre de décision une série
+ d’exemple -les commentaires- où il sera associé à chacun de ces derniers
+ un label -0 si le commentaire n'est sujet à la sensation de désorientation
+ et 1 sinon-, de ce fait il y aura deux colonnes.
+ Une première où il y aura le corpus et une seconde où l’humain aura admis
+ par un 0 ou 1 si cet écrit prône la sensation de désorientation de la personne
+ qui l’ecrit.\SpecialChar \-
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Une fois que l'arbre de décisions aura appris de ces multiples examples,
+ notamment au niveau des structures syntaxiques qui se dégagent de ce genre
+ d’écrit, il sera capable par la suite de récupérer n’importe quel autre
+ passage de texte non évalué par l’humain et estimer en sortie sur oui ou
+ non ce passage véhicule un sentiment de désorientation.
+ Il est évident que d’autres analyses plus subtiles pourrons être faites
+ si nous nous retrouvions dans un cas où l’on aurait d'autres paramètres
+ associés à ces commentaires faits.
+ Notamment, le sexe de la personne qui écrit ce passage, sa localisation,
+ la période de l’année, son lieu de résidence ou son historique médical.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Texte
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Label
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Il fesait chaud, le monde est agité, étouffant.
+ Nous sommes en été serait-il possible de mettre en marche la climatisation
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Les passages sont étroits et sombres à certains endroit, nous nous sommes
+ perdus plusieurs fois.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Les agents d'accueil sont sympathiques, de parfait communiquant.
+ Je reviendrai!
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Difficile de trouver son chemin sans aucune indication !
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Un jardin en ville...
+ bruyant et peu de places à l'ombre pour s'installer...
+ même pas possible de trouver un coin d'herbe pour se poser.
+ Dommage...
+ sinon, pour Paris c'est joli.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Conclusion
+\end_layout
+
+\end_body
+\end_document
