@@ -1,0 +1,63 @@
+% This file was created with JabRef 2.10.
+% Encoding: UTF-8
+
+
+@Book{Husserl1990-HUSCEE,
+  Title                    = {Chose Et Espace.},
+  Author                   = {Edmund Husserl and Jean{-}fran\c{c}ois Lavigne},
+  Publisher                = {Presses Universitaires de France},
+  Year                     = {1990},
+  Number                   = {3},
+  Volume                   = {180},
+
+  Journal                  = {Revue Philosophique de la France Et de l'Etranger},
+  Pages                    = {561--562}
+}
+
+@Article{MARATOS2001910,
+  Title                    = {Neural activity associated with episodic memory for emotional context},
+  Author                   = {E.J Maratos and R.J Dolan and J.S Morris and R.N.A Henson and M.D Rugg},
+  Journal                  = {Neuropsychologia},
+  Year                     = {2001},
+  Number                   = {9},
+  Pages                    = {910 - 920},
+  Volume                   = {39},
+
+  Abstract                 = {To address the question of which brain regions subserve retrieval of emotionally-valenced memories, we used event-related fMRI to index neural activity during the incidental retrieval of emotional and non-emotional contextual information. At study, emotionally neutral words were presented in the context of sentences that were either negatively, neutrally or positively valenced. At test, fMRI data were obtained while participants discriminated between studied and unstudied words. Recognition of words presented in emotionally negative relative to emotionally neutral contexts was associated with enhanced activity in right dorsolateral prefrontal cortex, left amygdala and hippocampus, right lingual gyrus and posterior cingulate cortex. Recognition of words from positive relative to neutral contexts was associated with increased activity in bilateral prefrontal and orbitofrontal cortices, and left anterior temporal lobe. These findings suggest that neural activity mediating episodic retrieval of contextual information and its subsequent processing is modulated by emotion in at least two ways. First, there is enhancement of activity in networks supporting episodic retrieval of neutral information. Second, regions known to be activated when emotional information is encountered in the environment are also active when emotional information is retrieved from memory.},
+  Doi                      = {https://doi.org/10.1016/S0028-3932(01)00025-2},
+  ISSN                     = {0028-3932},
+  Keywords                 = {Emotion, Episodic memory, fMRI, Negative, Positive, Neuroimaging},
+  Url                      = {http://www.sciencedirect.com/science/article/pii/S0028393201000252}
+}
+
+@Article{PHELPS,
+  Title                    = {Human emotion and memory: interactions of the amygdala and hippocampal complex},
+  Author                   = {Elizabeth A Phelps},
+  Journal                  = {Current Opinion in Neurobiology},
+  Year                     = {2004},
+  Number                   = {2},
+  Pages                    = {198 - 202},
+  Volume                   = {14},
+
+  Abstract                 = {The amygdala and hippocampal complex, two medial temporal lobe structures, are linked to two independent memory systems, each with unique characteristic functions. In emotional situations, these two systems interact in subtle but important ways. Specifically, the amygdala can modulate both the encoding and the storage of hippocampal-dependent memories. The hippocampal complex, by forming episodic representations of the emotional significance and interpretation of events, can influence the amygdala response when emotional stimuli are encountered. Although these are independent memory systems, they act in concert when emotion meets memory.},
+  Doi                      = {https://doi.org/10.1016/j.conb.2004.03.015},
+  ISSN                     = {0959-4388},
+  Url                      = {http://www.sciencedirect.com/science/article/pii/S0959438804000479}
+}
+
+@Article{Underwood342,
+  Title                    = {The polluted brain},
+  Author                   = {Underwood, Emily},
+  Journal                  = {Science},
+  Year                     = {2017},
+  Number                   = {6323},
+  Pages                    = {342--345},
+  Volume                   = {355},
+
+  Doi                      = {10.1126/science.355.6323.342},
+  Eprint                   = {http://science.sciencemag.org/content/355/6323/342.full.pdf},
+  ISSN                     = {0036-8075},
+  Publisher                = {American Association for the Advancement of Science},
+  Url                      = {http://science.sciencemag.org/content/355/6323/342}
+}
+

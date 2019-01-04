@@ -1,0 +1,1701 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.5cm
+\topmargin 2cm
+\rightmargin 2.5cm
+\bottommargin 2cm
+\headsep 0cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\paragraph_spacing onehalf
+
+\series bold
+Étude préliminaire et prédiction du sentiment de désorientation dans un
+ texte par un classifieur supervisé
+\end_layout
+
+\begin_layout Author
+
+\series bold
+Auteur :
+\series default
+ Sofiane M'Barki 
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+Illustrations :
+\series default
+ Mathilde Fournier
+\end_layout
+
+\begin_layout Section*
+\paragraph_spacing onehalf
+La désorientation et ses formes
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Le sentiment de désorientation peut émerger dans de multiples situations
+ et peut prendre diverses formes.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Lisez les passages suivants en essayant de vous imager les scènes vécues
+ :
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing onehalf
+
+\color black
+La couleur des fleurs ravivait la blafarde clarté de cette journée d'automne.
+
+\color cyan
+ 
+\color inherit
+La ville est en feu, les corps jonchent le sol, je ferme les yeux et avance
+ vers cette 
+\color black
+lumière bleue
+\color inherit
+.
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing onehalf
+
+\color red
+Il était là, nous le distinguions, en face, à trente mètres, derrière cette
+ brume qui nous 
+\size largest
+\strikeout on
+barrait
+\size default
+\strikeout default
+ le champ de vision.
+ Silencieusement, nous nous faufilions sous 
+\size giant
+\strikeout on
+ces fils de fer barbelés
+\size default
+\strikeout default
+ et prîmes quelques photographies.
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing onehalf
+
+\color blue
+Une seconde balle du tireur l'arrête court.
+ Cette fois il s'abattit la face contre le pavé, et ne remua plus.
+ Cette petite grande âme venait de s'envoler.
+ 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\color blue
+Hugo, Les misérables, V, I, 15, (la mort de Gavroche)
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing onehalf
+
+\color magenta
+Ces phrases sont-elles 
+\size scriptsize
+\strikeout on
+gênantes
+\size default
+\strikeout default
+, 
+\shape smallcaps
+\size larger
+perturbantes
+\shape default
+\size default
+, contraignantes, 
+\emph on
+déboussolantes
+\emph default
+ ?
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "0.5pt"
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+En répondant aux questions précédentes jaillit de notre mémoire épisodique
+ des représentations mentales et émotions imaginées ou vécues lors de situations
+ semblables.
+ Bien que la mécanique cognitive pour traiter ces informations soit globalement
+ identique d'un individu à l'autre, une même situation donne lieu à des
+ images cognitives uniques, notamment celle où les 
+\emph on
+émotions 
+\emph default
+interviennent.
+ L'amygdale et le complexe de l'hippocampe, deux structures de lobe temporal
+ médian, sont reliés à deux systèmes de mémoire indépendants, chacun avec
+ des fonctions caractéristiques uniques.
+ Dans les situations émotionnelles, ces deux systèmes interagissent de manière
+ subtile mais importante.
+ Plus précisément, l’amygdale peut moduler à la fois l’encodage et le stockage
+ des mémoires dépendantes de l’hippocampe.
+ Le complexe hippocampique, en formant des représentations épisodiques de
+ la signification émotionnelle et de l'interprétation des événements, peut
+ influencer la réponse de l'amygdale lorsque des stimuli émotionnels sont
+ rencontrés 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MARATOS2001910,PHELPS"
+
+\end_inset
+
+.
+ En effet, même si ces représentations mentales semblent uniques à première
+ vue, certaines régularités de mouvement, de temporalité et d'émotions semblent
+ se dégager de situations particulières, notamment celle où l'humain est
+ vulnérable : les récits de guerre, d'explorateurs échoués, de randonneurs,
+ etc.
+ Au sens où Husserl le souligne : 
+\begin_inset Quotes eld
+\end_inset
+
+Le caractère essentiel de la perception est d'être 
+\begin_inset Quotes eld
+\end_inset
+
+conscient
+\begin_inset Quotes erd
+\end_inset
+
+ de la présence en chair et en os de l'object [
+\emph on
+des Objektes
+\emph default
+], c'est-à-dire d'en être phénomène.
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Husserl1990-HUSCEE"
+
+\end_inset
+
+.
+ Nous avons là une phénoménologie des représentations de récits qui se joue
+ sur deux niveaux.
+ Un premier sur comment le texte en tant que tel relate une histoire désorientan
+te au niveau sémantique et où il serait intéressant de savoir si un ordinateur
+ peut déterminer -- suite à une phase d'apprentissage supervisé -- si c'est
+ le cas ou pas.
+ Et un second, sur l'incidence représentationnelle des propriétés esthétiques
+ et émotives du texte sur les individus.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Dans la série de questions précédentes, peut-être avez-vous plissé vos yeux
+ ou basculé votre buste pour y voir plus clair.
+ Bien que cela ne soit que du texte, l'image cognitive que vous vous êtes
+ faite, qu’elle soit auditive, visuelle ou tactile a dû être sollicitée
+ pour vous représenter la situation.
+ Ces images mentales que nous nous imaginons suite à la lecture d'un récit
+ sont potentiellement déformées par la forme, les couleurs, l'agencement
+ ou encore la magnitude émotionnelle des mots utilisés ; donc, aussi bien
+ esthétiquement qu'émotionnellement.
+ La désorientation textuelle sera étudiée dans le cadre de l'esthétique,
+ de l'émotion et de la sémantique ; car dans le cas de la lecture, ces dernières
+ propriétés semblent être des portes d’entrée vers le maintien ou l’effondrement
+ d’une phénoménologie cohérente.
+ 
+\end_layout
+
+\begin_layout Section*
+\paragraph_spacing onehalf
+Propriétés de la désorientation dans un texte
+\end_layout
+
+\begin_layout Standard
+Pour étudier la désorientation textuelle il serait également intéressant
+ de proposer un cadre de travail permettant alors de nous poser des sous-questio
+ns simples et y apporter une réponse scientifique précise.
+ Comme dans tout champ scientifique, c’est la conjugaison des interprétations
+ de ces petites réponses qui nous permettra peut-être de répondre à la vaste
+ et grande question de l'émergence du sentiment de désorientation.
+ Les axes suivants d'étude peuvent être un bon début :
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+L'impact de la 
+\emph on
+magnitude émotionnelle
+\emph default
+ 
+\emph on
+et des mots et émotions
+\emph default
+ 
+\emph on
+des mots
+\emph default
+ utilisés par l'écrivain et perçus par le lecteur.
+ 
+\end_layout
+
+\begin_layout Enumerate
+L'incidence esthétique du texte (couleurs, police, taille de la police,
+ longueur des phrases, ponctuation, agencement local et global du texte
+ sur la page, etc.) 
+\end_layout
+
+\begin_layout Enumerate
+Utilisation de mots propres au champ lexical de la désorientation.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Les propriétés 1.
+ et 2.
+ nous permettent de quantifier l'incidence représentationnelle de l'esthétique
+ d'un texte et de la magnitude émotionnelle des mots sur le lecteur.
+ La troisième propriété nous permettra par la suite de prédire automatiquement
+ si le récit relate une histoire désorientante ou pas.
+ Enfin, l'ensemble de ces propriét
+\emph on
+és
+\emph default
+ nous servira à construire une méthode algorithmique permettant d'identifier
+ selon un axe choisi, s'il existe à l'intérieur d'une information (texte)
+ les propriétés 
+\emph on
+a priori
+\emph default
+ identifiées par le modélisateur comme étant nécessaire à sa classification
+ dans un certain état.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Propriété 1 : magnitude émotionnelle des mots
+\end_layout
+
+\begin_layout Standard
+Pourquoi ? Car je pense que cette dernière est propre à l'individu qui choisit
+ les mots de son récit et donc la représentation qu'il s'en fait, et que
+ de faits inévitables, le lecteur qui appose son attention sur ce récit
+ se retrouve pris dans l'élan et la magnitude émotionnelle des mots de l'écrivai
+n.
+ Pour investiguer sur le champ de la magnitude émotionnelle des mots nous
+ avons besoin d'un lexique quantifié de référence.
+ Pour cela nous allons utiliser 
+\emph on
+le lexique des 
+\emph default
+sentiments
+\emph on
+ et des 
+\emph default
+émotions
+\emph on
+ du NRC (National Research Council Canada)
+\emph default
+ qui est une collection de sept lexiques.
+ Chaque lexique comporte une liste de mots et leurs associations avec certaines
+ catégories d’intérêts, telles que les émotions (joie, tristesse, peur,
+ etc.), les sentiments (positifs et négatifs) ou les couleurs (rouge, bleu,
+ noir, etc.), mais également un score allant de -5 (sentiment négatif) à
+ +5 ( sentiment positif).
+ Si la langue choisie est l'anglais ces lexiques peuvent être utilisés pour
+ analyser des textes anglais.
+ Des traductions de lexique et leurs associations sont également fournies
+ dans 40 autres langues, dont le français, l’arabe, le chinois et l’espagnol.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+En partant de cela, nous pouvons utiliser des ordinateurs et des algorithmes
+ pour nous aider à parcourir d’énormes quantités de données et à en comprendre
+ le contenu - par exemple, 
+\emph on
+"Que dit-on d’une certaine entité cible?"
+\emph default
+ (les entités cibles communes incluent une société, un produit, une politique,
+ une personne, un pays ou une situation).
+ Mais nous pouvons aller plus loin et poser également des questions telles
+ que: 
+\emph on
+"Quelque chose de bon ou de mauvais est-il dit sur l'entité cible?"
+\emph default
+ mais aussi, 
+\emph on
+"L'orateur ou l'écrivain est-il content, fâché ou craintif de la cible?"
+\emph default
+.
+ La mise au point de ces lexiques de sentiments et d’émotions permet de
+ créer des systèmes d’analyse automatique des sentiments 
+\emph on
+-- sentiment analysis --
+\emph default
+, offrant une compréhension plus profonde des sentiments et des émotions
+ sous-jacents contenus dans l’information.
+\end_layout
+
+\begin_layout Standard
+Le tableau ci-dessous est composé de quatre colonnes.
+ La première colonne 
+\begin_inset Quotes eld
+\end_inset
+
+Texte
+\begin_inset Quotes erd
+\end_inset
+
+ contient les commentaires parsemés par des individus sur une plateforme
+ numérique quelconque.
+ La seconde colonne 
+\begin_inset Quotes eld
+\end_inset
+
+Label
+\begin_inset Quotes erd
+\end_inset
+
+ contient 0 pour les commentaires relatant une situation 
+\emph on
+non désorientante
+\emph default
+ et 1 sinon.
+ La troisième colonne correspond à la moyenne calculée sur les scores de
+ magnitude émotionnelle de chacun des mots du commentaire.
+ Et enfin, la dernière colonne correspond à l'émotion apparaissant le plus
+ souvent dans le commentaire: 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Texte
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Label
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Score
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sentiment
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+Difficile
+\series default
+ de 
+\series bold
+trouver
+\series default
+ son chemin sans 
+\series bold
+aucune
+\series default
+ indication !
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-2.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+tristesse
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Les agents 
+\series bold
+d'accueil
+\series default
+ sont 
+\series bold
+sympathiques
+\series default
+, de 
+\series bold
+parfaits
+\series default
+ communiquant.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+joie
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-2.7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+tableau de donnée construit à partir du lexique NRC
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Suite à la construction de ce tableau nous pouvons nous poser les questions
+ que nous nous posions précédemment.
+ L'entité cible correspondra aux commentaires relatant une situation désorientan
+te, ceux avec la case 
+\begin_inset Quotes eld
+\end_inset
+
+Label
+\begin_inset Quotes erd
+\end_inset
+
+ cochée à 1.
+ De là nous pourrions associer statistiquement des tendances émotionelles
+ récurrentes dans cette situation.
+\end_layout
+
+\begin_layout Subsection*
+Propriété 2 : incidence esthétique du texte
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Quand la forme et le fond semblent se traduire l'un l'autre.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nous pourrions alors interroger le lecteur et lui demander lequels de ces
+ deux textes lui évoque le plus d'images, si ces derniers racontent la même
+ histoire ou encore à quel sentiment associe-t-il chacun d'eux : est-ce
+ de la tristesse, de l'immersion, du rêve ou autre chose ? La magnitude
+ emotionnelle globale perçue d'un 
+\emph on
+groupe
+\emph default
+ 
+\emph on
+contrôle
+\emph default
+ lisant uniquement le texte brut à un 
+\emph on
+groupe
+\emph default
+ 
+\emph on
+test
+\emph default
+ lisant le texte esthétiquement scénarisé varie-t-elle significativement
+ ?
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Propriété 3 : champs lexical de la désorientation et apprentissage
+\end_layout
+
+\begin_layout Standard
+La classification consiste à choisir le bon libellé de classe (1 ou 0) pour
+ une entrée donnée (texte).
+ La phase d'apprentissage repose sur lea fait d'apprendre à un système que
+ l'on appelle classifieur, à figer un état de connaissance du monde construit
+ sur le nôtre.
+ Un classifieur est dit 
+\series bold
+supervisé
+\series default
+ s'il est construit sur la base de corpus d'apprentissage contenant l'étiquette
+ appropriée pour chaque entrée.
+ Le cadre utilisé par la classification supervisée est présenté en 1.1 :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/sofianembarki/Desktop/Disorientation final/supervised-classification.png
+	rotateOrigin center
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Classification supervisée
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Pendant l’entraînement (a), un extracteur de caractéristiques (feature extractor
+) est utilisé pour convertir chaque valeur d'entrée (texte, sentiment, score)
+ en un ensemble de caractéristiques.
+ C'est cet ensemble de caractéristiques qui capturent l'information de base
+ à chaque entrée pendant l'apprentissage.
+ Cet ensemble de caractéristiques (features) et d'étiquettes (label) sont
+ par la suite introduites dans l'algorithme d'apprentissage automatique
+ pour générer un modèle.
+\end_layout
+
+\begin_layout Subsubsection*
+Données et features 
+\end_layout
+
+\begin_layout Standard
+Durant la phase d'apprentissage, le classifieur, à force d'exemples, construira
+ un monde (ou modèle) permettant d'expliquer le label à partir des features.
+ C'est à cet endroit précis que nous injectons l'ensemble de nos croyances
+ dans le système car nous choisissons quelle typologie de recit correspond
+ à quel label.
+ Les données ci-dessous sont celles qui seront présentéeSs au système :
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Texte
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sentiment
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Score
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Label
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+Difficile
+\series default
+ de 
+\series bold
+trouver
+\series default
+ son chemin sans 
+\series bold
+aucune
+\series default
+ indication !
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+tristesse
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-2.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Les agents 
+\series bold
+d'accueil
+\series default
+ sont 
+\series bold
+sympathiques
+\series default
+, de 
+\series bold
+parfait
+\series default
+ communiquant.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+joie
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-2.7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+tableau de donnée construit à partir du lexique NRC
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Prédiction des labels
+\end_layout
+
+\begin_layout Standard
+Durant la phase de prédiction (b), le même extracteur de caractéristiques
+ (feature extractor) est utilisé sur de nouvelles données d'entrée.
+ Ces features -- exclut la colonne 
+\begin_inset Quotes eld
+\end_inset
+
+Label
+\begin_inset Quotes erd
+\end_inset
+
+ car c'est ce que le système cherche à prédire -- sont ensuite introduits
+ dans le modèle, qui génère automatiquement les étiquettes prédites (label).
+ Autrement dit, le système sera capable de prendre en entrée un nouveau
+ récit non évalué par l’humain puis d'estimer en sortie si 
+\begin_inset Quotes eld
+\end_inset
+
+oui
+\begin_inset Quotes erd
+\end_inset
+
+ ou 
+\begin_inset Quotes eld
+\end_inset
+
+non
+\begin_inset Quotes erd
+\end_inset
+
+ (1 ou 0) ce passage véhicule un sentiment de désorientation aux niveaux
+ lexical et sentimental :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Texte
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sentiment
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Score
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color red
+Label prédit
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+Trop
+\series default
+ de 
+\series bold
+monde
+\series default
+, plutôt 
+\series bold
+décu
+\series default
+ de 
+\series bold
+l'accueil
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+tristesse
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-2.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color red
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Le 
+\series bold
+jardin
+\series default
+ des 
+\series bold
+plantes
+\series default
+ est 
+\series bold
+magnifique
+\series default
+.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+joie
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color red
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+La 
+\series bold
+mer
+\series default
+ était 
+\series bold
+agitée
+\series default
+, les 
+\series bold
+vagues
+\series default
+ 
+\series bold
+bousculaient
+\series default
+ notre navire.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+peur
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-2.7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color red
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Je 
+\series bold
+ne comprends
+\series default
+ 
+\series bold
+pas
+\series default
+ comment utiliser le mode couleur ...
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+tristesse
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color red
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color red
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+en noir, le jeu de données pour la prédiction ; en rouge, la prédiction
+ des labels par le système.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Fin de propos et perspective
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Ceci n’est qu’une des multiples situations où nous pouvons éprouver une
+ gêne induite par l’environnement avec lequel nous intéragisons.
+ Que ces gênes soient représentationelles ou physiques, ou l’un puis l’autre,
+ ces éléments sont autant d’attractions quotidiennes pour nos sens mais
+ également de facteurs pouvant expliquer l’émergence de la sensation de
+ désorientation.
+ La gêne physique et cognitive éprouvée dans une rue bruyante ou à la lecture
+ d’un récit visuellement incohérent ou/et sémantiquement désorientant peut
+ nous gêner perceptivement et déformer nos représentations mentales.
+ Quand est-il de cela mais cette fois-ci dû à d'autres facteurs communs
+ et récurrent de notre quotidien ? Par exemple, de ces réseaux de rues complexes
+, de ces architectures entropiques, de l'impact qu'ont ces environnements
+ trop lumineux et pollués sur notre cognition 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Underwood342"
+
+\end_inset
+
+ , de ces couleurs et contrastes sur nos smartphones, de ces messages numériques
+ que nous recevons et lisons sans cesse.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Prendre conscience du fait qu’à l’heure où des discours mystiques prolifèrent
+ sur la donnée, le big data, et dans un cadre où on n’a jamais trouvé autant
+ de données accessibles, il est important pour chaque étudiant, citoyen,
+ de se former à la donnée, de pouvoir en saisir le caractère brut et le
+ sens de l’information qu’elle véhicule sur les situations qui nous entourent.
+ De là peut émerger une honnêteté scientifique et une conscience, un sens
+ de l’orientation presque, dans un monde où les données qu’on observe sont
+ avant tout produites par le cadre d’observation qu’on projette.
+ Au final, le but de ce travail a été d'apporter de la transversalité entre
+ certains sous-axes nous approchant de la compréhension du sentiment de
+ désorientation où se rencontrent des frontières inattendues...
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintAll"
+bibfiles "/home/sofianembarki/Desktop/Disorientation final/disorientation"
+options "bibtotoc,unsrt"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
