@@ -151,10 +151,12 @@ barrait
  le champ de vision.
  Silencieusement, nous nous faufilions sous 
 \size giant
+ces
 \strikeout on
-ces fils de fer barbelés
-\size default
+ fils de fer
 \strikeout default
+ barbelés
+\size default
  et prîmes quelques photographies.
 \end_layout
 
@@ -253,7 +255,14 @@ key "MARATOS2001910,PHELPS"
  vue, certaines régularités de mouvement, de temporalité et d'émotions semblent
  se dégager de situations particulières, notamment celle où l'humain est
  vulnérable : les récits de guerre, d'explorateurs échoués, de randonneurs,
- etc.
+ etc 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LOSTARTFINDINGYOURWAY"
+
+\end_inset
+
+.
  Au sens où Husserl le souligne : 
 \begin_inset Quotes eld
 \end_inset
@@ -802,8 +811,60 @@ Label
  récurrentes dans cette situation.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection*
 Propriété 2 : incidence esthétique du texte
+\end_layout
+
+\begin_layout Standard
+Ces deux textes sont sémantiquement identiques, néanmoins nous pourrions
+ nous demander si l'incidence représentationnelle due à l'esthétique d'un
+ texte est significative :
+\end_layout
+
+\begin_layout Quote
+\paragraph_spacing double
+\align center
+\begin_inset Quotes eld
+\end_inset
+
+ La guerre essaya de nous tuer durant le printemps.
+ L'herbe verdissait les plaines de Niwana, le temps s'adoucissait, et nous
+ patrouillions à travers les collines qui s'étendaient autour des villes.
+ Nous parcourions les herbes hautes avec une confiance fabriquée de toutes
+ pièces, nous frayant, tels des pionniers, un chemin dans la végétation
+ balayée par le vent.
+ 
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -811,6 +872,17 @@ Propriété 2 : incidence esthétique du texte
 wide false
 sideways false
 status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/sofianembarki/Desktop/Disorientation final/Illustrations/text_scenarise.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -831,10 +903,6 @@ Quand la forme et le fond semblent se traduire l'un l'autre.
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 Nous pourrions alors interroger le lecteur et lui demander lequels de ces
  deux textes lui évoque le plus d'images, si ces derniers racontent la même
  histoire ou encore à quel sentiment associe-t-il chacun d'eux : est-ce
@@ -891,7 +959,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/sofianembarki/Desktop/Disorientation final/supervised-classification.png
+	filename /home/sofianembarki/Desktop/Disorientation final/Illustrations/supervised-classification.png
 	rotateOrigin center
 
 \end_inset
@@ -1689,7 +1757,7 @@ Prendre conscience du fait qu’à l’heure où des discours mystiques prolifè
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintAll"
-bibfiles "/home/sofianembarki/Desktop/Disorientation final/disorientation"
+bibfiles "disorientation"
 options "bibtotoc,unsrt"
 
 \end_inset
